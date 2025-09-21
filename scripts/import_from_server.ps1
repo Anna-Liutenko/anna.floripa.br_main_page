@@ -44,9 +44,7 @@ foreach ($p in $Candidates) {
 }
 
 if (-not $found) {
-    Write-Host "No common webroot found on remote. Please provide the path to the site root on the server:`n(e.g. /var/www/html)" -NoNewline
-    $found = Read-Host
-    if (-not $found) { Write-Host 'No path provided. Aborting.'; exit 1 }
+    $found = '/var/www/anna-site'
 }
 
 Write-Log "Using remote path: $found"
