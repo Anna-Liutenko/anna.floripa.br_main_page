@@ -35,17 +35,8 @@ if (-not (Test-Path (Join-Path $repoRoot '.git'))) {
     if ($c -ne 'y') { Write-Host 'Aborting.'; exit 1 }
 }
 
-# Find remote path
-$found = $null
-foreach ($p in $Candidates) {
-    Write-Log "Checking remote path $p"
-    $check = ssh $Server "[ -d '$p' ] && echo 'YES' || echo 'NO'" 2>$null
-    if ($check -match 'YES') { $found = $p; break }
-}
-
-if (-not $found) {
-    $found = '/var/www/anna-site'
-}
+# Set remote path directly
+$found = '/var/www/anna-site'
 
 Write-Log "Using remote path: $found"
 $timestamp = (Get-Date).ToString('yyyyMMddHHmmss')
