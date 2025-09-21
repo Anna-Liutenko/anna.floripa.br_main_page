@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna - AI Consultant & Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: "Inter", sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl font-bold text-gray-800 mb-6">Anna.AI</h1>
+            <h2 class="text-2xl text-gray-600 mb-8">Where Life Comes to Work</h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                Practical AI solutions for individuals and small businesses. 
+                From first steps to custom AI agents.
+            </p>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">My Project</h3>
+                <p class="text-gray-600 mb-6">A practical example of what I can build.</p>
+                <div class="bg-gray-50 p-6 rounded-lg text-left mb-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Live Demo: Web Translation Tool</h4>
+                    <p class="text-gray-600 mb-3"><strong>Goal:</strong> To create an accessible web-based translation service that integrates AI technology with user-friendly design.</p>
+                    <p class="text-gray-600 mb-4"><strong>Solution:</strong> I developed a web translator that understands context and provides accurate translations with usage tracking and multiple language support.</p>
+                    <a href="/web-translator/" class="inline-block bg-green-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300">Try the Web Translator</a> <a href="/widget/demo.html" class="bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 inline-block ml-4">Embed Widget</a>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">AI Agents for Business</h3>
+                    <p class="text-gray-600">Custom AI assistants for your website or messengers to automate support, generate leads, and answer questions 24/7.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">AI Consultations</h3>
+                    <p class="text-gray-600">Personalized one-on-one sessions to help you master neural networks for your work, study, or creative projects.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">About Me</h3>
+                <p class="text-gray-600">
+                    My journey into AI began with a simple curiosity: how can this powerful technology actually help us in our daily lives? 
+                    I quickly became passionate about building practical tools that solve real problems.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
