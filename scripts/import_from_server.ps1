@@ -52,17 +52,17 @@ $haveRsync = $false
 try { & rsync --version > $null 2>&1; if ($LASTEXITCODE -eq 0) { $haveRsync = $true } } catch { $haveRsync = $false }
 
 if ($haveRsync) {
-    Write-Log 'Using rsync over SSH to copy files.'
+    Write-Log 'Using rsync over SSH to copy files (with sudo).'
     $remoteSpec = "$($Server):$($found)/"
-    & rsync -a -e 'ssh' --exclude='.git' $remoteSpec $tempDir
+    & rsync -a -e 'ssh' --rsync-path='sudo rsync' --exclude='.git' $remoteSpec $tempDir
     if ($LASTEXITCODE -ne 0) { Write-Log 'rsync failed — falling back to streamed tar'; $haveRsync = $false }
 }
 
 if (-not $haveRsync) {
-    Write-Log 'Using streamed tar over SSH to copy files.'
+    Write-Log 'Using streamed tar over SSH to copy files (with sudo).'
     try { & tar --version > $null 2>&1 } catch { }
     if ($LASTEXITCODE -ne 0) { Write-Host "Local 'tar' not found. Run in Git Bash/WSL or install tar."; exit 1 }
-    $sshTarCmd = "tar -C '$found' -cf - --exclude='.git' ."
+    $sshTarCmd = "sudo tar -C '$found' -cf - --exclude='.git' ."
     & ssh $Server $sshTarCmd | & tar -x -C $tempDir
     if ($LASTEXITCODE -ne 0) { Write-Host 'Streamed ssh|tar failed. Aborting.'; exit 1 }
 }
